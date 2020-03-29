@@ -34,4 +34,11 @@ $(document).ready(function(){
         $('.portfolio').addClass('show')
     })
 
+    $('.menu-btn').click(function() {
+        $(this).toggleClass('menu-btn-active');
+        $('.mobile-nav-menu').toggleClass('mobile-nav-menu-active');
+        $('.mobile-nav-menu').toggleClass('bord-menu');
+        $('.mobile-nav-top').toggleClass('bord')
+    })
+
 });
