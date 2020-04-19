@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рыжий лобстер</title>
+    <title>Web-дизайнер Клюева Анастасия</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/slider.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:500i, 400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
     <script src="js/jq.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <script src="js/popup.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/9d3a68bda1.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -21,10 +27,10 @@
             <div class="bookmark__top-page summary-page active-page">
                 <p>Резюме</p>
             </div>
-            <div class="bookmark__top-page about-page">
+            <div style="position: relative; z-index: 2;" class="bookmark__top-page about-page not-active">
                 <p>Обо мне</p>
             </div>
-            <div class="bookmark__top-page portfolio-page">
+            <div class="bookmark__top-page portfolio-page not-active">
                 <p>Портфолио</p>
             </div>
         </div>
@@ -39,21 +45,29 @@
                     </div>
                     <div class="bookmark__social">
 
-                        <a href="#">
+                        <a title="Telegram" href="tg://resolve?domain=Anastasiya_rege">
                             <div class="bookmark__social_block">
                                 <div class="sc tg"></div>
                                 <p class="bookmark__social-text">Anastasiya_rege</p>
                             </div>
                         </a>
 
-                        <a href="#">
+              
                             <div class="bookmark__social_block">
                                 <div class="sc mail"></div>
-                                <p class="bookmark__social-text">a.a.kliueva@gmail.com</p>
+                                <p class="bookmark__social-text clipboard-mail" id="bar" data-clipboard-action="copy" data-clipboard-target="#bar">a.a.kliueva@gmail.com</p>
                             </div>
-                        </a>
 
-                        <a href="#">
+                        <script>
+                            var clipboard = new Clipboard('.clipboard-mail');
+
+                            $('.clipboard-mail').click(function(){
+                                alert('Скопировано')
+                            });
+
+                            
+                        </script>
+                        <a href="https://www.behance.net/KliuevaAnastasiya" target="_blank">
                             <div class="bookmark__social_block">
                                 <div class="sc ph"></div>
                                 <p class="bookmark__social-text">Москва, Королёв</p>
@@ -65,27 +79,29 @@
                 <div class="summary rightside show">
                     <div class="summary__block">
                         <div class="summary__icon">
-                            <img src="Images/ranking.png" alt="rank" height="35px" width="40px">
+                            <img src="Images/ranking.png" alt="rank" height="40px" width="40px" style="margin-top:-3px">
                         </div>
                         <div>
                             <p class="summary-header">Образование</p>
                         </div>
-                        <p class="summary-date">2015-2019</p>
-                        <p class="summary-text"><span>Информационные системы и технологии</span> <br>
-                            Москвоский Технический Университет Связи и Информатики</p>
+                        <p class="summary-date">2015 - 2019</p>
+                        <div>
+                            <p class="summary-text bold" >Информационные системы и технологии</p>
+                            <p class="summary-text">Москвоский Технический Университет Связи и Информатики</p>
+                        </div>
                     </div>
 
                     <div class="summary__block">
                         <div class="summary__icon">
-                            <img src="Images/wave.png" alt="rank" height="35px" width="40px">
+                            <img src="Images/wave.png" alt="rank" height="50px" width="50px" style="margin-top: -8px; margin-left: 1px;">
                         </div>
                         <div>
                             <p class="summary-header">Опыт работы</p>
                         </div>
                         <p class="summary-date">2019 - н.в.</p>
                         <div>
-                            <p class="summary-text sum-ed-txt"><span class="summary-text_bold">Информационные системы и технологии</span> <br><span class="pepes"> ФГБОУ МТУСИ </span> </p>
-                            <p class="summary-text">Администрирование сайта на CMS 1C-Битрикс</p>
+                            <p class="summary-text sum-ed-txt"><span class="summary-text_bold">Программист</span> <br><span class="pepes"> ФГБОУ МТУСИ </span> </p>
+                            <p class="summary-text summary-text-mob">Администрирование сайта на CMS 1C-Битрикс</p>
                             <p class="summary-text">Внесение технических правок на сайт</p>
                             <p class="summary-text">Редактирование стилей на web-сервисе</p>
                         </div>
@@ -93,7 +109,7 @@
 
                     <div class="summary__block">
                         <div class="summary__icon">
-                            <img style="padding-left: 5px" src="Images/text.png" alt="rank" height="35px" width="35px">
+                            <img style="padding-left: 5px" src="Images/text.png" alt="rank" height="31px" width="31px">
                         </div>
                         <div>
                             <p class="summary-header">Технические навыки</p>
@@ -137,7 +153,7 @@
 
                     <div class="summary__block" style="margin-top: 20px">
                         <div class="summary__icon">
-                            <img style="padding-left: 5px" src="Images/adjust.png" alt="rank" height="35px" width="35px">
+                            <img style="margin-top: -2px;" src="Images/adjust.png" alt="rank" height="39px" width="39px" >
                         </div>
                         <div>
                             <p class="summary-header">Интересы</p>
@@ -146,12 +162,12 @@
                         <div class="summary-tech-flex">
                             <div class="summary-tech-skill interest">
                                 <img src="./Images/dance.png" height="55px" width="55px">
-                                <p>Танцы</p>
+                                <p style="margin-left: 2px">Танцы</p>
                             </div>
 
                             <div class="summary-tech-skill interest">
                                 <img src="./Images/travel.png" height="55px" width="55px">
-                                <p>Путешествия</p>
+                                <p style="margin-left: -14px">Путешествия</p>
                             </div>
 
                             <div class="summary-tech-skill interest">
@@ -161,7 +177,7 @@
 
                             <div class="summary-tech-skill interest">
                                 <img src="./Images/photograph.png" height="55px" width="55px">
-                                <p>Фото- и видео-<br>съемка</p>
+                                <p style="width:124px; margin-left:-14px">Фото- и видео-<br>съемка</p>
                             </div>
                         </div>
                         
@@ -171,19 +187,19 @@
                 <div class="about rightside ">
                     <div class="summary__block">
                         <div class="summary__icon">
-                            <img src="Images/professions-and-jobs.png" alt="rank" height="35px" width="40px">
+                            <img src="Images/professions-and-jobs.png" alt="rank" height="39px" width="39px" style="margin-top:-4px">
                         </div>
                         <div>
                             <p class="summary-header">Познакомимся поближе?</p>
                         </div>
                     </div>
                     <div class="about__text">
-                        <p>Привет! Я начинающий web-дизайнер из Москвы, а точнее из её области - города Королёв. Всю свою жизнь меня привлекала фото- и видео- съемка, танцы, рисование и всё, что связано с творческим подходом к созданию чего-то нового. В более осознанном возрасте, я уже во всю ретушировала фотографии, делала видео со своих мини-путешествий, изучала азы дизайна, отрисовывала прототипы и мечтала скорее ворваться в сферу web-дизайна. Ищу работу в дружном и профессиональной команде для совершенствования своих навыков и создания качественных проектов.</p>
+                        <p>Привет! Я начинающий web-дизайнер из Москвы, а точнее из её области - города Королёв. Всю свою жизнь меня привлекала фото- и видео- съемка, танцы, рисование и всё, что связано с творческим подходом к созданию чего-то нового. В более осознанном возрасте, я уже во всю ретушировала фотографии, делала видео со своих мини-путешествий, изучала основы дизайна, отрисовывала прототипы и мечтала скорее ворваться в сферу web-дизайна. Ищу работу в дружной и профессиональной команде для совершенствования своих навыков и создания качественных проектов.</p>
                     </div>
 
                     <div class="summary__block">
                         <div class="summary__icon">
-                            <img src="Images/magnifying-glass.png" alt="rank" height="35px" width="40px">
+                            <img src="Images/magnifying-glass.png" alt="rank" height="32px" width="33px">
                         </div>
                         <div>
                             <p class="summary-header">Дополнительные навыки</p>
@@ -193,33 +209,39 @@
                             <p class="summary-text">CMS Wordpress, Tilda, 1C-Битрикс</p>
                             <p class="summary-text">Английский язык ( Базовый )</p>
                             <p class="summary-text">Основы Adobe Illustrator</p>
-                            <p class="summary-text">Видеоредакторы (Sony Vegas Pro, Movavi Video Editor)</p>
+                            <p class="summary-text">Видеоредакторы ( Sony Vegas Pro, Movavi Video Editor )</p>
                         </div>
                     </div>
 
 
-                    <div class="summary__block" style="margin-top: 20px">
+                    <div class="summary__block" style="margin-top: 10px">
                         <div class="summary__icon">
-                            <img style="padding-left: 5px" src="Images/sharethis.png" alt="rank" height="35px" width="35px">
+                            <img style="padding-left: 5px" src="Images/sharethis.png" alt="rank" height="33px" width="33px">
                         </div>
                         <div>
                             <p class="summary-header">Ссылочки на страницы соц.сетей</p>
                         </div>
                         <p class="summary-date"></p>
                         <div class="summary-tech-flex">
-                            <div class="summary-tech-skill">
-                                <img src="./Images/Youtube.png" height="60px" width="60px">
-                                <p class="about__sc-text">Youtube</p>
+                            <div class="summary-tech-skill ">
+                                <a href="https://www.youtube.com/channel/UCJek8hHg4O1-2anwr3Vrm5Q" target="_blank">
+                                    <img src="./Images/Youtube.png" height="70px" width="70px">
+                                    <p class="about__sc-text sc-active">Youtube</p>
+                                </a>
                             </div>
 
                             <div class="summary-tech-skill">
-                                <img src="./Images/Behance.png" height="60px" width="60px">
-                                <p class="about__sc-text">Behance</p>
+                                <a href="https://www.behance.net/KliuevaAnastasiya" target="_blank">
+                                    <img src="./Images/Behance.png" height="70px" width="70px">
+                                    <p class="about__sc-text sc-active">Behance</p>
+                                </a>
                             </div>
 
                             <div class="summary-tech-skill">
-                                <img src="./Images/VK.png" height="60px" width="60px">
-                                <p class="about__sc-text">Vk.com</p>
+                                <a href="https://vk.com/id_84760576" target="_blank">
+                                    <img src="./Images/VK.png" height="70px" width="70px">
+                                    <p class="about__sc-text sc-active">Vk.com</p>
+                                </a>
                             </div>
                         </div>
                         
@@ -228,43 +250,56 @@
 
                 <div class="portfolio rightside ">
                     <div class="summary__block">
-                        <div class="summary__icon">
-                            <img src="Images/professions-and-jobs (2).png" alt="rank" height="35px" width="40px">
+                        <div class="summary__icon" style="margin-top:17px">
+                            <img src="Images/professions-and-jobs (2).png" alt="rank" height="34px" width="34px">
                         </div>
                         <div>
-                            <p class="summary-header">Мои работы</p>
+                            <p class="summary-header" style="margin-bottom: 0;">Мои работы</p>
                         </div>
                     </div>
-                    <div class="portfolio__slider">
-                        <div class="portfolio__slider_img"></div>
-                        <div class="portfolio__slider-dots-flex">
-                            <div class="dot active-dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
+                    <div class="slide-wrap">
+                        <div class="slider">
+                            <div class="viewport">
+                                    <ul class="sliderwprapper">
+                                        <li class="slide"><a class="popup jopec" href="#"><img src="./Images/slider/1.jpg" alt="Слайд 1"></a></li>
+                                        <li class="slide"><a class="popup2 jopec" href="#"><img src="./Images/slider/2.jpg" alt="Слайд 1"></a></li>
+                                        <li class="slide"><a class="popup3 jopec" href="#"><img src="./Images/slider/3.jpg" alt="Слайд 1"></a></li>
+                                        <li class="slide"><a class="popup4 jopec" href="#"><img src="./Images/slider/1.jpg" alt="Слайд 1"></a></li>
+                                        <li class="slide"><a class="popup5 jopec" href="#"><img src="./Images/slider/2.jpg" alt="Слайд 1"></a></li>
+                                        <li class="slide"><a class="popup6 jopec" href="#"><img src="./Images/slider/3.jpg" alt="Слайд 1"></a></li>
+                                    </ul>
+            
+                                    <div class="btns">
+                                        <div class="slide-nav active"></div>
+                                        <div class="slide-nav"></div>
+                                        <div class="slide-nav"></div>
+                                        <div class="slide-nav"></div>
+                                        <div class="slide-nav"></div>
+                                        <div class="slide-nav"></div>
+                                    </div>
+                            </div>
                     </div>
+                </div>
 
-                    <div class="summary__block" style="margin-top: 40px">
+
+                    <div class="summary__block" style="margin-top: 40px; margin-bottom: 20px">
                         <div class="summary__icon">
-                            <img src="Images/professions-and-jobs (1).png" alt="rank" height="35px" width="40px">
+                            <img src="Images/professions-and-jobs (1).png" alt="rank" height="36px" width="36px">
                         </div>
                         <div>
                             <p class="summary-header">Пройденные курсы</p>
                         </div>
-                        <p class="summary-date" style="margin: 6px 0">2018 г.</p>
-                        <p class="summary-text" style="margin: 6px 0">Интенсив “Основы веб-дизайна”</p>
-                        <p class="summary-date" style="margin: 6px 0">2019 г.</p>
-                        <p class="summary-text" style="margin: 6px 0"> Курс «Веб-дизайнер/маркетолог: эффективный старт»</p>
+                        <p class="summary-date" style="margin: 6px 0; padding-top:4px;">2018 г.</p>
+                        <p class="summary-text link-font" style="margin: 6px 0"><a class="link-font" href="./certificates/сертификат Основы веб-дизайна.pdf" target="_blank" style="color:inherit">Интенсив «Основы веб-дизайна»</a> <i style="font-size:13px" class="fas fa-external-link-alt"></i></p>
+                        <p class="summary-date" style="margin: 6px 0; padding-top:4px;">2019 г.</p>
+                        <p class="summary-text link-font" style="margin: 6px 0"><a class="link-font" href="./certificates/сертификат ВД.pdf" target="_blank" style="color:inherit"> Курс «Веб-дизайнер/маркетолог: эффективный старт» </a><i style="font-size:13px" class="fas fa-external-link-alt"></i></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="mobile-ver">
+    <div class="mobile-ver" >
         <div class="mobile-nav-top">
             <div class="mobile-nav__leftside">
                 <h1>Клюева Анастасия</h1>
@@ -283,25 +318,25 @@
                 <a class="mobile-nav-menu__link" href="./about-mob.html">Обо мне</a>
                 <a class="mobile-nav-menu__link" href="./portfolio.html">Портфолио</a>
         </div>
-        <div class="container-mob">
-            <div class="bookmark__photo"></div>
+        <div class="container-mob" style="margin-bottom: -25px">
+            <div class="bookmark__photo" ></div>
             <div class="bookmark__social">
 
-                <a href="#">
+                <a title="Telegram" href="tg://resolve?domain=Anastasiya_rege">
                     <div class="bookmark__social_block">
                         <div class="sc tg"></div>
-                        <p class="bookmark__social-text">Anastasiya_rege</p>
+                            <p class="bookmark__social-text">Anastasiya_rege</p>
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="mailto:a.a.kliueva@gmail.com?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%BF%D0%BE%20%D0%92%D0%B0%D1%88%D0%B5%D0%BC%D1%83%20%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5&body=%D0%90%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D1%81%D0%B8%D1%8F%2C%20%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%0D%0A%0D%0A">
                     <div class="bookmark__social_block">
                         <div class="sc mail"></div>
                         <p class="bookmark__social-text">a.a.kliueva@gmail.com</p>
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="https://www.behance.net/KliuevaAnastasiya" target="_blank">
                     <div class="bookmark__social_block">
                         <div class="sc ph"></div>
                         <p class="bookmark__social-text">Москва, Королёв</p>
@@ -309,7 +344,7 @@
                 </a>
 
             </div>
-            <div class="summary-mob">
+            <div class="summary-mob" style="margin-top: 47px">
                 <div class="summary-mob__header" >
                     <div class="summary__icon">
                         <img src="Images/ranking.png" alt="rank" height="35px" width="40px">
@@ -328,8 +363,9 @@
                     </div>
                 </div>
             </div>
-            <div class="summary-mob">
-                <div class="summary-mob__header" style="margin-top: 39px">
+
+            <div class="summary-mob" style="margin-top: 23px"> 
+                <div class="summary-mob__header" >
                     <div class="summary__icon">
                         <img src="Images/wave.png" alt="rank" height="35px" width="40px">
                     </div>
@@ -344,11 +380,14 @@
                     <div class="summary-mob__body_rightside">
                         <p style="margin: 0">Программист</p>
                         <p style="margin: 0">ФГБОУ МТУСИ</p>
-                        <p>Администрирование сайта на CMS 1C-Битрикс Внесение технических правок на сайт Редактирование стилей на web-сервисе</p>
+                        <p class="summary-mob__body_rightside-text" style="margin-top: 16px;">Администрирование сайта на CMS 1C-Битрикс</p> 
+                        <p class="summary-mob__body_rightside-text">Внесение технических правок на сайт</p> 
+                        <p class="summary-mob__body_rightside-text">Редактирование стилей на web-сервисе</p>
                     </div>
                 </div>
             </div>
-            <div class="summary-mob">
+
+            <div class="summary-mob" style="margin-top: 35px">
                 <div class="summary-mob__header">
                     <div class="summary__icon">
                         <img src="Images/text.png" alt="rank" height="35px" width="40px">
@@ -363,34 +402,35 @@
                             <img src="./Images/AdobePh.png" height="55px" width="55px">
                             <p>Adobe<br>Photoshop</p>
                             <div class="progress-outer">
-                                <div class="progress-inner" style="width: 50%"></div>
+                                <div class="progress-inner" style="width: 48%"></div>
                             </div>
                         </div>
                         <div class="summary-tech-skill">
                             <img src="./Images/Coding.png" height="55px" width="55px">
                             <p style="line-height: 46px">HTML/CSS</p>
                             <div class="progress-outer">
-                                <div class="progress-inner" style="width: 50%"></div>
+                                <div class="progress-inner" style="width: 38%"></div>
                             </div>
                         </div>
                         <div class="summary-tech-skill">
                             <img src="./Images/Figma.png" height="55px" width="55px">
                             <p style="line-height: 46px;">Figma</p>
                             <div class="progress-outer">
-                                <div class="progress-inner" style="width: 60%"></div>
+                                <div class="progress-inner" style="width: 70%"></div>
                             </div>
                         </div>
                         <div class="summary-tech-skill">
                             <img src="./Images/Lightroom.png" height="55px" width="55px">
                             <p>Adobe<br>Lightroom</p>
                             <div class="progress-outer">
-                                <div class="progress-inner" style="width: 50%"></div>
+                                <div class="progress-inner" style="width: 29%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
-            <div class="summary-mob">
+
+            <div class="summary-mob" style="margin-top: 41px">
                 <div class="summary-mob__header">
                     <div class="summary__icon">
                         <img src="Images/adjust.png" alt="rank" height="35px" width="40px">
@@ -401,19 +441,19 @@
                 </div>
                 <div class="summary-mob__body">
                     <div class="tech-flex">
-                        <div class="summary-tech-skill interest">
+                        <div class="summary-tech-skill interest2">
                             <img src="./Images/dance.png" height="55px" width="55px">
                             <p>Танцы</p>
                         </div>
-                        <div class="summary-tech-skill interest" style="margin-left:39px">
+                        <div class="summary-tech-skill interest2" style="margin-left:51px">
                             <img src="./Images/travel.png" height="55px" width="55px">
                             <p>Путешествия</p>
                         </div>
-                        <div class="summary-tech-skill interest">
+                        <div class="summary-tech-skill interest2">
                             <img src="./Images/books.png" height="55px" width="55px">
                             <p>Книги</p>
                         </div>
-                        <div class="summary-tech-skill interest" style="margin-left:32px">
+                        <div class="summary-tech-skill interest2" style="margin-left:48px">
                             <img src="./Images/photograph.png" height="55px" width="55px">
                             <p>Фото- и видео-<br> съемка</p>
                         </div>
@@ -421,10 +461,30 @@
                 </div>
             </div>
         </div>
+
+        <a class="toTop" href="#">
+            <div class="toTopButton-wrap">
+                <div class="toTopButton"></div>
+            </div>
+        </a>
+        
         </div>
     </div>
 
 
+        <div class="slider-popup">
+            <img class="slider-popup-img more" src="./Images/slider/MosYoga.jpg">
+        </div>
+        <div class="slider-overlay"></div>
+
 
 </body>
+
+<script type="text/javascript">
+    window.onload = function(){
+        var imgWidth = $('.slider-popup').width();
+        var calc = `calc(50% - ${imgWidth/2}px)`;
+        $('.slider-popup').css('left', calc);
+    }
+</script>
 </html>

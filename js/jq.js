@@ -1,23 +1,27 @@
-// $(document).on('click','.menu-btn', function(e) {
-//     e.preventDefault;
-//     $(this).toggleClass('menu-btn_active');
-//     $('.mob-menu__bot').toggleClass('mob-menu__bot_active')
-// });
-
-
 $(document).ready(function(){
+
+    // var imgWidth = $('.slider-popup').width();
+    // var calc = `calc(50% - ${imgWidth/2}px)`;
+    // $('.slider-popup').css('left', calc);
     
     $('.summary-page').click(function() {
         $(this).addClass('active-page');
+        $(this).removeClass('not-active')
         $('.about-page').removeClass('active-page')
         $('.portfolio-page').removeClass('active-page')
+        $('.about-page').addClass('not-active')
+        $('.portfolio-page').addClass('not-active')
         $('.about').removeClass('show')
         $('.portfolio').removeClass('show')
         $('.summary').addClass('show')
+        
     })
 
     $('.about-page').click(function() {
         $(this).addClass('active-page');
+        $(this).removeClass('not-active')
+        $('.summary-page').addClass('not-active')
+        $('.portfolio-page').addClass('not-active')
         $('.summary-page').removeClass('active-page')
         $('.portfolio-page').removeClass('active-page')
         $('.summary').removeClass('show')
@@ -27,6 +31,9 @@ $(document).ready(function(){
 
     $('.portfolio-page').click(function() {
         $(this).addClass('active-page');
+        $(this).removeClass('not-active');
+        $('.summary-page').addClass('not-active')
+        $('.about-page').addClass('not-active')
         $('.summary-page').removeClass('active-page')
         $('.about-page').removeClass('active-page')
         $('.summary').removeClass('show')
@@ -42,3 +49,4 @@ $(document).ready(function(){
     })
 
 });
+

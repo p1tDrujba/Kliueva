@@ -5,6 +5,8 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     overflow-y: scroll;
+    cursor: default;
+    padding-bottom: 30px;
 }
 
 a {
@@ -24,7 +26,7 @@ ul {
     margin-top:-50px;
     height: 700px;
     min-width: 410px;
-    background: linear-gradient(180deg, #A5BCD3 21.73%, #C7D5E4 55.59%, #FFFFFF 99.86%);
+    background: linear-gradient(180deg, #A5BCD3 21.73%, #C7D5E4 62.59%, #FFFFFF 99.86%);
     border: 1px solid #0D3667;
     border-top: 0px;
 }
@@ -70,16 +72,31 @@ ul {
     border-radius: 10px 10px 0 0;
     border-bottom: none;
     margin-left: -25px;
+    padding-top:2px;
 }
 
-.bookmark__top-page:hover {
+.not-active:hover {
     cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #AFC3D8;
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.15);
+    transform: rotate(-0.04deg);
+}
+
+.bookmark__top-page:active {
+    background: #FFFFFF;
+    box-shadow: 5px -2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    height: 44px;
 }
 
 .active-page {
     background-color: white;
     border: none;
     position: relative;
+    z-index: 3;
     height: 44px;
     box-shadow: 5px -3px 4px rgba(0, 0, 0, 0.1);
 }
@@ -202,6 +219,13 @@ ul {
     align-items: center;
 }
 
+.bookmark__social_block:hover {
+    border: 1px solid #A5BCD3;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px #A5BCD3;
+    border-radius: 15px;
+}
+
 .sc {
     height: 33px;
     width: 33px;
@@ -252,6 +276,7 @@ ul {
 .rightside {
     margin-left: 77px;
     display: none;
+    margin-top:-17px;
 }
 
 .summary__block {
@@ -280,9 +305,15 @@ ul {
     color: #000000;
     padding-bottom: 3px;
     border-bottom: 1px solid black;
+    box-sizing: border-box;
     margin-left: 22px;
     margin-top: 16px;
     margin-bottom: 16px;
+    padding-left: 2px;
+}
+
+.summary-header:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 .summary-date {
@@ -306,9 +337,14 @@ ul {
 
 .summary-text_bold {
     display: inline-block;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 20px;
 }
+
+.bold {
+    font-weight: 600;
+}
+
 
 .sum-ed-txt span { 
     margin: 0;
@@ -321,7 +357,11 @@ ul {
 }
 
 .summary-tech-skill {
-    margin-right: 45px;
+    margin-right: 35px;
+}
+
+.summary-tech-skill:hover .sc-active {
+    text-shadow: 0px 0px 4px rgba(0, 58, 125, 0.9);
 }
 
 
@@ -336,6 +376,15 @@ ul {
     font-size: 16px;
 }
 
+.link-font {
+    display: inline-block;
+}
+
+.link-font:hover {
+    color: #A5BCD3;
+    cursor:pointer;
+}
+
 .summary-tech-skill p{
     display: inline-block;
     height: 46px;
@@ -345,14 +394,16 @@ ul {
     font-weight: normal;
     font-size: 0.8rem;
     text-align: center;
+    margin-bottom:0;
 }
 
 .interest {
     text-align: center;
+    width: 78px;
 }
 
 
-.interest p {
+.interest2 p {
     font-size: 0.9rem;
 }
 
@@ -427,40 +478,11 @@ ul {
     background: #C7D5E4;
     border: 5px solid #A5BCD3;
     border-radius: 15px;
-    /* filter: blur(4px); */
-}
-
-.portfolio__slider_img {
-    background-image: url(../Images/Delivery-mini.jpg);
-    background-size: cover;
-    height: inherit;
-    width: inherit;
-    border-radius: 15px;
-}
-
-.portfolio__slider-dots-flex {
-    display: flex;
-    margin-top: 26px;
-    justify-content: center;
-}
-
-.dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    background: rgba(0, 0, 0, 0.05);
-    margin-left: 6px;
-}
-
-.active-dot {
-    background: #AFC3D8;
 }
 
 .mobile-ver {
     display: none;
 }
-
-
 
 @media (max-width: 700px) {
 	.desktop-ver {
@@ -534,7 +556,7 @@ ul {
         width: 20px;
         height: 2px;
         margin-top: -1px;
-        background-color: white;
+        background-color: #4F6F94;
     }
 
     .menu-btn span::before,
@@ -568,7 +590,7 @@ ul {
         width: 20px;
         height: 2px;
         margin-top: -1px;
-        background-color: #4F6F94;
+        background-color: white;
     }
 
     .menu-btn-active span::before,
@@ -657,6 +679,10 @@ ul {
         margin-top: 21px;
     }
 
+    .bookmark__social  .bookmark__social_block:first-child {
+        margin-top:20px;
+    }
+
     .bookmark__social_block {
         width: 260px;
         height: 60px;
@@ -664,6 +690,7 @@ ul {
         box-sizing: border-box;
         box-shadow: 5px -2px 4px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
+        margin-top: 10px;
     }
 
     .bookmark__social-text {
@@ -680,18 +707,21 @@ ul {
     .summary-mob__header {
         display: flex;
         justify-content: flex-start;
-        margin-top: 45px;
     }
 
     .summary-mob {
         margin: 0 auto;
         width: 300px;
+        padding-left: 20px;
     }
 
     .summary-header {
         font-size: 1.2rem;
         line-height: 28px;
+        margin-left: 19px;
     }
+
+    
 
     .summary-mob__body {
         display: flex;
@@ -710,7 +740,7 @@ ul {
         line-height: 19px;
         display: inline-block;
         width: 210px;
-        margin-left: 10px;
+        margin-left: 21px;
     }
 
     .summary-mob__body_rightside p:first-child {
@@ -742,9 +772,9 @@ ul {
         padding: 0 33px;
     }
 
-    .interest {
+    /* .interest {
         min-width: 78px;
-    }
+    } */
 
     .interest p{
         height: inherit;
@@ -761,18 +791,19 @@ ul {
         line-height: 19px;
     }
 
+    .summary-text-mob {
+        margin-top:10px;
+    }
+
     .summary-tech-flex-mob {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .mob-slider {
-        width: 256.72px;
-        height: 170.5px;
-        margin: 0 auto;
-        text-align: center;
-        border: 1px solid black;
+    .summary-mob__body_rightside-text {
+        margin: 0;
+        margin-top: 10px;
     }
 
     .body-courses {
@@ -791,6 +822,38 @@ ul {
         display: inline-block;
         font-size: 0.8rem;
         margin: 0;
+    }
+
+    .mob-slider-dots {
+        display: block;
+        margin: 0 auto;
+        margin-top: 12px;
+    }
+
+    .toTopButton-wrap {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .toTopButton {
+        margin-right: 20px;
+        width: 42px;
+        height: 42px;
+        background: rgba(232, 239, 245, 0.5);
+        border-radius: 50px;
+        background-image: url(../Images/galka.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    .toTopButton:hover {
+        background: rgba(232, 239, 245, 0.9);
+        border: 1px solid #A5BCD3;
+        background-image: url(../Images/galka.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
     }
 
     
